@@ -31,7 +31,34 @@ public class Programa {
 
 		}
 
+		// "Leitura do financiamento
+
+		System.out.print("Número de prestações:");
+		numeroPrestacoes = sc.nextInt();
+
+		System.out.print("Porcentagem de entrada:");
+		porcentagem = sc.nextDouble();
+
+		System.out.print("Valor total financiado:");
+		valorTotalFinanciado = sc.nextDouble();
+
+		double valorEntrada, valorFinanciado, prestacao;
+
+		valorEntrada = (valorTotalFinanciado * porcentagem) / 100;
+		valorFinanciado = valorTotalFinanciado - valorEntrada;
+		prestacao = valorFinanciado / numeroPrestacoes;
+
+		while (prestacao > (salario * 30 / 100)) {
+
+			System.out.print("O valor total financiado nao pode ser maior que 30% do salário. Tente novamente");
+			valorTotalFinanciado = sc.nextDouble();
+
+			valorEntrada = (valorTotalFinanciado * porcentagem) / 100;
+			valorFinanciado = valorTotalFinanciado - valorEntrada;
+			prestacao = valorFinanciado / numeroPrestacoes;
+
+		}
+
 	}
 
 }
-
